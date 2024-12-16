@@ -42,7 +42,9 @@ if (dx != 0 || dy != 0) {
 
 if (keyboard_check_pressed(vk_space)) {
     if (currently_talking == noone) {
-        var who_is_here = instance_place(x, y, obj_walky);
+        var check_x = lengthdir_x(32, anim_dir * 90) + x;   // 32 * dcos(angle)
+        var check_y = lengthdir_y(32, anim_dir * 90) + y;   // -32 * dsin(angle)
+        var who_is_here = instance_place(check_x, check_y, obj_walky);
         if (who_is_here != noone) {
             current_text = who_is_here.text[0];
             currently_talking = who_is_here;
