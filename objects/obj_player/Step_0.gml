@@ -2,7 +2,7 @@ var dx = 0, dy = 0;
 
 running = false;
 
-if (currently_talking == false) {
+if (currently_talking == noone) {
     if (keyboard_check(vk_left) || keyboard_check(ord("A"))) {
         dx = -1;
     }
@@ -41,14 +41,21 @@ if (dx != 0 || dy != 0) {
 }
 
 if (keyboard_check_pressed(vk_space)) {
-    if (currently_talking == false) {
+    if (currently_talking == noone) {
         var who_is_here = instance_place(x, y, obj_walky);
         if (who_is_here != noone) {
-            current_text = who_is_here.text;
-            currently_talking = true;
+            current_text = who_is_here.text[0];
+            currently_talking = who_is_here;
             current_text_index = 0;
+            current_text_line_number = 0;
         }
     } else {
-        currently_talking = false;
+        if (current_text_line_number < array_length(currently_talking.text) - 1) {
+            current_text_line_number++;
+            current_text = currently_talking.text[current_text_line_number];
+            current_text_index = 0;
+        } else {
+            currently_talking = noone;
+        }
     }
 }

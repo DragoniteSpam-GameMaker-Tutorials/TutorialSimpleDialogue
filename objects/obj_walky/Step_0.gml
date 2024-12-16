@@ -1,4 +1,4 @@
-if (obj_player.currently_talking == false) {
+if (obj_player.currently_talking == noone) {
     if (moving) {
         var dx = dcos(move_dir);
         var dy = -dsin(move_dir);
