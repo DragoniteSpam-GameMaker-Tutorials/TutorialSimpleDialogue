@@ -37,3 +37,10 @@ if (dx != 0 || dy != 0) {
         audio_play_sound(se_footstep, 100, false);
     }
 }
+
+if (keyboard_check_pressed(vk_space)) {
+    var who_is_here = instance_place(x, y, obj_walky);
+    if (who_is_here != noone) {
+        show_message("someones here!")
+    }
+}
