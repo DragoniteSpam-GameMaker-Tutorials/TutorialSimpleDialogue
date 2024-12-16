@@ -1,0 +1,1 @@
+text = "Why do we park on driveways and drive on parkways?";

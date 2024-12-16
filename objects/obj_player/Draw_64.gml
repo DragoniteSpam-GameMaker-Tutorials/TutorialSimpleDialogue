@@ -11,5 +11,6 @@ if (currently_talking == true) {
     var text_y = y1 + 32;
     
     draw_set_color(c_black);
-    draw_text(text_x, text_y, current_text);
+    draw_text(text_x, text_y, string_copy(current_text, 1, current_text_index));
+    current_text_index++;
 }

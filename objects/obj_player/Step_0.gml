@@ -46,6 +46,7 @@ if (keyboard_check_pressed(vk_space)) {
         if (who_is_here != noone) {
             current_text = who_is_here.text;
             currently_talking = true;
+            current_text_index = 0;
         }
     } else {
         currently_talking = false;

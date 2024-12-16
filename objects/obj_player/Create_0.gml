@@ -8,3 +8,4 @@ if (!audio_is_playing(bgm_idle_with_accordions)) {
 
 current_text = "";
 currently_talking = false;
+current_text_index = 0;

@@ -1,0 +1,1 @@
+text = "When you fart do you get lighter or heavier?";
